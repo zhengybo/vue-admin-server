@@ -1,0 +1,20 @@
+
+{% macro render(options) %}
+  <div class="carousel {{options.type or 'fade'}}">
+  	<div class="carouselCantain ">
+  		<ul class="w carouselInner">
+        {% import './tmp.html' as inner %}
+        {{inner.tmp(options.data,options.src)}}
+  		</ul>
+  	</div>
+    {% if not options.noPages %}
+  	<div class="carouselPages">
+      <ul class=""></ul>
+    </div>
+    {% endif %}
+    {% if not options.noPreNext %}
+    <a class="prev" href="javascript:void(0)"></a>
+    <a class="next" href="javascript:void(0)"></a>
+    {% endif %}
+  </div>
+{% endmacro %}

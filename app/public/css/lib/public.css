@@ -1,0 +1,117 @@
+#app{
+  width:100%;
+  height:100%;
+}
+#header { height:32px; line-height:32px; background:#eee; border-bottom:1px solid #ddd; overflow:hidden;  }
+#header em{  color:#f00;  }
+#header span{ float:right;  color:#999;  }
+#header span a{ margin:0 5px; color:#666;  }
+
+/* 导航 */
+#nav {
+  background:#39A4DC;
+  height: 40px;
+}
+
+#nav .nav h3 a {
+  color: white;
+  display: block;
+  height: 100%;
+  line-height: 40px;
+}
+
+#nav .nav h3 a:hover{
+  text-decoration: none;
+}
+
+#nav .navItem{
+  position: relative;
+  float: left;
+  width: 100px;
+  text-align: center;
+  line-height: 40px;
+  height: 40px;
+  font-size: 14px;
+  color: white;
+}
+
+#nav .on{
+  background:#1F7CAF;
+}
+
+#nav .navItemSub a:hover{
+  color:#ff0;
+  text-decoration: none;
+  background:#2595d1;
+}
+
+#nav .navItemSub{
+  width: 100%;
+  display:none;
+  position:absolute;
+  z-index: 999;
+  line-height: 28px;
+  left: 0;
+  top:40px;
+  background:#1F7CAF;
+  text-align:center;
+}
+
+#nav .navItemSub a{
+  display: block;
+  height: 28px;
+  color: white;
+  line-height: 28px;
+}
+
+/* ------ */
+
+/* banner */
+
+
+
+#footer{
+  clear: both;
+  margin-top: 20px;
+  background-color: gray;
+  overflow: hidden;
+}
+
+#footer .footerInner{
+  overflow: hidden;
+}
+
+#footer .f_item{
+  float: left;
+  width: 120px;
+  line-height: 20px;
+  text-align: center;
+}
+
+#footer .f_item_name{
+  font-size: 16px;
+  color: white;
+  margin: 5px 0;
+}
+
+#footer  .f_item_list{
+  font-size: 14px;
+  line-height: 24px;
+}
+
+#footer  .f_item_list a {
+  display: block;
+  height: 100%;
+}
+
+#footer  .f_item_list a:hover{
+  background-color: #e4d0d0;
+  color: gray;
+}
+
+#footer .copyRight{
+  color: white;
+  font-size: 16px;
+  margin-top: 10px;
+  text-align: center;
+}

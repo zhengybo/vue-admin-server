@@ -1,0 +1,27 @@
+<!-- 导航 S -->
+	<div id='nav' class="navBar">
+		<ul class="nav w">
+			{% for item in html.nav.value or [] %}
+			<li  class="navItem {{html.nav.current == item.value and 'on'}}">
+				<h3><a  href="{{item.href}}">{{item.name}}</a></h3>
+				<ul class="navItemSub">
+					{% for list in item.subItem.data %}
+						<li><a href="{{list.href}}">{{list.name}}</a></li>
+					{% endfor %}
+				</ul>
+			</li>
+			{% endfor %}
+		</ul>
+	</div>
+	<script type="text/javascript">
+	  $(".nav").slide({
+			type:"menu",
+			titCell:".navItem",
+			targetCell:".navItemSub",
+			effect:"slideDown",
+			delayTime:300,
+			triggerTime:100,
+			returnDefault:true,
+		});
+  </script>
+	<!-- 导航 E -->

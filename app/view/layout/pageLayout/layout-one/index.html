@@ -1,0 +1,36 @@
+{# 模板 1#}
+{% extends "./../../baseLayout/extend/base.html" %}
+{% block children %}
+  {% include "./../../baseLayout/header/index.html"  %}
+
+  {% include "./../../baseLayout/banner/index.html"  %}
+
+  {% include "./../../baseLayout/nav/index.html"  %}
+
+  <div id="content">
+    {% block content %}{% endblock %}
+  </div>
+
+  {% include "./../../baseLayout/footer/index.html"  %}
+<script type="text/javascript">
+
+  $(function(){
+    $(".carousel.left").slide({
+      titCell:".carouselPages ul",
+      mainCell:".carouselCantain ul",
+      effect:"left",
+      autoPlay:true,
+      autoPage:true,
+      trigger:"click"
+    });
+    $(".carousel.fade").slide({
+      titCell:".carouselPages ul",
+      mainCell:".carouselCantain ul",
+      effect:"fade",
+      autoPlay:true,
+      autoPage:true,
+      trigger:"click"
+    });
+  })
+</script>
+{% endblock %}

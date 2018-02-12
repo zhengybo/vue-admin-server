@@ -1,0 +1,35 @@
+/* 手风琴 */
+.accordion{
+  width: 210px;
+  float: left;
+  padding: 5px;
+  background-color: white;
+  /*height:214px;*/
+}
+.accordion .accordionHd{
+  margin-top:1px;
+  background:url(/public/images/public/icons.png) #E3E3E3 180px -37px no-repeat;
+  cursor:pointer;
+ }
+.accordion .accordionHd h3{
+  color:#666;
+ }
+ .accordionUl{
+   padding: 10px 5px;
+ }
+
+.accordionLink{
+  display: block;
+}
+
+.accordion .on{
+  background:url(/public/images/public/icons.png) #f60 180px -77px no-repeat;
+ }
+.accordion .on h3{
+ color:#fff;
+}
+.accordion .accordionBd{
+  height:116px;
+  overflow:hidden;
+  display:none;
+}

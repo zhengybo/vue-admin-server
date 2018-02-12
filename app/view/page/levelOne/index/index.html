@@ -1,0 +1,25 @@
+{% import './../../../layout/compoents/public/rollUp/index.html' as RollUp %}
+{% import './../../../layout/compoents/public/tabNews/index.html' as TabNews %}
+{% import './../../../layout/compoents/public/accordion/index.html' as Accordion %}
+{% import './../../../layout/compoents/public/picScroll/index.html' as PicScroll %}
+{% import './../../../layout/compoents/public/subTitle/index.html' as SubTitle %}
+{% extends "./../../../layout/pageLayout/layout-one/index.html" %}
+{% block content %}
+  <div class="w">
+    {{RollUp.render({
+      title : rollUp.title ,
+      data : rollUp.children
+    })}}
+
+    {{TabNews.render(tabNews)}}
+    {{Accordion.render(accordion)}}
+    {{PicScroll.render(picScroll)}}
+    <div class="clear">
+
+    </div>
+    {{SubTitle.render('成龙')}}
+  </div>
+  <script type="text/javascript">
+    $("img.lazyload").lazyload();
+  </script>
+{% endblock %}

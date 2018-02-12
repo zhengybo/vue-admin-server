@@ -1,0 +1,46 @@
+/* 图片滚动 */
+.picScroll{
+  width: 800px;
+  position:relative;
+  height:124px;
+  padding:10px 10px 0;
+  background:#fff;
+  margin-bottom:10px;
+  overflow:hidden;
+}
+.picScroll ul{
+  overflow:hidden;
+  zoom:1;
+}
+.picScroll ul li{
+  float:left;
+  margin: 0 6px;
+  width:122px;
+  overflow:hidden;
+  display:inline;
+}
+.picScroll ul li img{
+  width:122px;
+  height:124px;
+}
+.picScroll .prev,
+.picScroll .next{
+  position:absolute;
+  left:15px;
+  top: 60px;
+  display:block;
+  width:18px;
+  height:28px;
+  overflow:hidden; background:url(/public/images/public/icons.png) -40px 0 no-repeat; cursor:pointer;
+ }
+.picScroll .next{
+  left:auto;
+  right:15px;
+  background-position:-120px 0;
+}
+.picScroll .prevStop{
+  background-position:0 0;
+}
+.picScroll .nextStop{
+  background-position:-80px 0;
+}

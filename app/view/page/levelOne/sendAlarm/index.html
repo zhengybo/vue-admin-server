@@ -1,0 +1,68 @@
+{% extends "./../../../layout/baseLayout/extend/base.html" %}
+{% block children %}
+  <h1>c3警报模拟</h1>
+  <input placeholder="请输入id" class="id" type="text">
+  <select class="level" name="">
+    <option value="CRITICAL">紧急</option>
+    <option value="MAGOR">严重</option>
+    <option value="WARNING">警告</option>
+  </select>
+  <select class="alarmName" class="level" name="">
+    <option value="dffs">dffs</option>
+    <option value="vdsdd">vdsdd</option>
+    <option value="cggftr">cggftr</option>
+  </select>
+  <select class="status" name="">
+    <option value="NORMAL">NORMAL</option>
+    <option value="CLEAR">CLEAR</option>
+  </select>
+  <input placeholder="请输入警告源" class="alarmSounce" type="text">
+  <button class="sendAlarm" type="button" name="button">发送警报</button>
+  <script type="text/javascript">
+    var socket = (function(){
+      var socket = io('http://127.0.0.1:7001/sendalarm');
+      socket.on('connect', function(){
+        console.log('connect success');
+      });
+      socket.on('event', function(data){});
+      socket.on('res', function(msg){
+        console.log(msg);
+      });
+      socket.on('disconnect', function(){
+        console.log('---x');
+      });
+      return socket;
+    })()
+
+    let $level = $('.level'),
+        $name = $('.alarmSounce'),
+        $sounce = $('.alarmName'),
+        $id = $('.id'),
+        $status = $('.status');
+    $('.sendAlarm').on('click',function(){
+      let level = $level.find('option:selected').val(),
+          name = $name.val(),
+          id = $id.val(),
+          sounce = $sounce.find('option:selected').val(),
+          status = $status.find('option:selected').val(),
+          time = new Date().getTime(),
+          updateTime = new Date().getTime();
+      // socket.emit('chat', 'hello world!');
+      // socket.emit('sendalarm','我发起了一个京巴')
+
+      socket.emit('sendalarm',{
+        level,
+        id,
+        name,
+        sounce,
+        time,
+        status,
+        updateTime
+      })
+    })
+    // setInterval(() => {
+    //   $('.sendAlarm')[0].click();
+    // },100)
+
+  </script>
+{% endblock %}

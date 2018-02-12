@@ -1,0 +1,23 @@
+<div id="footer" >
+  <div class="w">
+    <div class="footerInner">
+      {% for item in footer.address or [] %}
+        <div class="f_item">
+          <div class="f_item_name">
+            {{item.name}}
+          </div>
+          <ul class="">
+            {% for list in item.sub or [] %}
+            <li class="f_item_list">
+              <a href="{{list.href}}">{{list.name}}</a>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+      {% endfor %}
+    </div>
+    <div class="copyRight">
+  		Copyright ©2011-2013 大话主席 www.superslide2.com
+  	</div>
+  </div>
+</div>

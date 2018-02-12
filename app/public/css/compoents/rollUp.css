@@ -1,0 +1,22 @@
+.rollUp{
+  width: 200px;
+  background-color: white;
+  padding: 5px;
+}
+.rollUpContain{
+
+}
+
+.rollUpContainItem{
+  overflow: hidden;
+}
+.rollUpContainItem span{
+  font-size: 12px;
+  margin-right: 20px;
+  line-height: 24px;
+}
+
+.rollUpContainItem a{
+  max-width: 120px;
+  font-size: 12px;
+}

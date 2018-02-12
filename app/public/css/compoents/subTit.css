@@ -1,0 +1,15 @@
+.subTit{
+  height: 30px;
+}
+
+.subTit .subTitBlock{
+  height: 20px;
+  margin-top: 5px;
+  width: 4px;
+  background-color: #ff8800;
+}
+
+.subTit .subValue{
+  line-height: 30px;
+  margin-left: 20px;
+}

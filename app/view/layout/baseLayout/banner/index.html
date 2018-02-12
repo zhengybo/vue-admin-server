@@ -1,0 +1,9 @@
+{# banner显示 #}
+{% import  "./../../compoents/public/carousel/index.html" as carousel  %}
+<div id="banner" class="w">
+	{{carousel.render({
+		data  : html.banner.data,
+		src 	: '/layout/baseLayout/banner/tmp.html',
+		type : 'left'
+	})}}
+</div>

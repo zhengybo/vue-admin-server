@@ -1,0 +1,10 @@
+{% macro render(title = '',link = false) %}
+  <div class="subTit">
+    <span class="subTitBlock l"></span>
+    {% if link %}
+    <div class="subValue l"><a href="">{{title}}</a></div>
+    {% else %}
+    <div class="subValue l">{{title}}</div>
+    {% endif %}
+  </div>
+{% endmacro %}

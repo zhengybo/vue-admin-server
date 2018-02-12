@@ -1,0 +1,33 @@
+
+
+{% macro render(options = {}) %}
+<div  class="rollUp">
+  <div class="rollUpTitle subTitle">
+    {{options.title}}
+  </div>
+  <div class="rollUpFrame">
+    <ul class="rollUpContain">
+      {% for item in (options.data or [])%}
+      <li class="rollUpContainItem">
+        <span class="l">{{item.name}}</span>
+        <a
+          title="{{item.content}}"
+          class="l hidden"
+          href="{{item.href}}">{{item.content}}</a>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){
+  $(".rollUp").slide({
+    mainCell:".rollUpContain",
+    autoPlay:true,
+    effect:"topMarquee",
+    interTime:50,
+    vis:{{options.data.length}}
+  });
+})
+</script>
+{% endmacro %}

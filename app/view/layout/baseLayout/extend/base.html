@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hacker News</title>
+    <link rel="stylesheet" href="/public/css/news.css" />
+    {% for href in css %}
+      <link rel="stylesheet" href="{{href}}" />
+    {% endfor %}
+    {% for src in scripts %}
+      <script src="{{src}}" type="text/javascript"></script>
+    {% endfor %}
+  </head>
+  <body>
+    <div id="app">
+      {% block children %}{% endblock %}
+    </div>
+  </body>
+</html>

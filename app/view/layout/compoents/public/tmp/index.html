@@ -1,0 +1,9 @@
+{# 转接 include在 macro直接引入 里面的for语句 调用不到变量 #}
+{# 这是一个转接口 #}
+{% macro tmp(data,src) %}
+  {% for item in data or [] %}
+  {% if src %}
+    {% include './../../../../' + src %}
+  {% endif %}
+  {% endfor %}
+{% endmacro %}

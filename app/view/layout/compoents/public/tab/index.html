@@ -1,0 +1,24 @@
+{% macro render(options = {}) %}
+<div class="slideTxtBox">
+  {{options.src}}
+  <div class="slideContain">
+
+    <ul>
+      {% for value in (options.data or {}).title or [] %}
+      <li><a href="#">{{value}}</a></li>
+      {% endfor %}
+    </ul>
+  </div>
+  <div class="slideContent">
+    {% import './tmp.html' as inner %}
+    {{inner.tmp((options.data or {}).data,options.src)}}
+  </div>
+</div>
+<script type="text/javascript">
+  $(".slideTxtBox").slide({
+      titCell : '.slideContain li',
+      mainCell : '.slideContent',
+      trigger:"click"
+  });
+</script>
+{% endmacro %}

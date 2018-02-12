@@ -1,0 +1,25 @@
+{% extends "./../../../layout/baseLayout/extend/base.html" %}
+{% block children %}
+  <h1>c3警报模拟</h1>
+
+  <input placeholder="请输入警告源" class="alarmSounce" type="text">
+  <button class="sendAlarm" type="button" name="button">发送警报</button>
+  <script type="text/javascript">
+    var socket = (function(){
+      var socket = io('http://127.0.0.1:7001');
+      socket.on('connect', function(){
+        console.log('connect success');
+      });
+      socket.on('event', function(data){});
+      socket.on('res', function(msg){
+        console.log(msg);
+      });
+      socket.on('disconnect', function(){
+        console.log('---x');
+      });
+      return socket;
+    })()
+
+
+  </script>
+{% endblock %}

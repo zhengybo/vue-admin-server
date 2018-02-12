@@ -1,0 +1,54 @@
+{% extends "./base.html" %}
+
+{% macro field(name, value='', type='text') %}
+<div class="field">
+  <input type="{{ type }}" name="{{ name }}"
+         value="{{ value | escape }}" />
+</div>
+{% endmacro %}
+
+{% macro add(x, y) %}
+{{ caller() }}: {{ x + y }}
+{% endmacro%}
+
+{% block children %}
+<div>
+  {% call add(1, 2) -%}
+  The result is
+  {%- endcall %}
+</div>
+
+{% set username = "joe" %}
+{% import "./forms.html" as forms %}
+{{ username }}
+{{ username }}
+
+{{ field('user') }}
+{{ field('pass', type='password','123123') }}
+<div class="">
+  {{ forms.label('Username') }}
+  --------------
+  {% filter replace("force", "forth") %}
+may the force be with you
+{% endfilter %}
+</div>
+
+
+  {% for x, y in points %}
+  <div>  Point: {{ x }}, {{ y }}</div>
+  {% endfor %}
+  {% if hungry %}
+    It is true
+  {% endif %}
+  {% for key,value in food %}
+    <div>Use {{ key }} of {{ value }}</div>
+  {% endfor %}
+  <div class="news-view view">
+    {% for item in list %}
+      <div class="item">
+        <a href="{{ item.url }}">{{ item.title }}</a>
+      </div>
+    {% endfor %}
+    <div class="dom"></div>
+  </div>
+{% endblock %}

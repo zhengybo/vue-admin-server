@@ -1,0 +1,67 @@
+.newsBox{
+  float:left;
+  width:400px;
+  height:220px;
+  overflow:hidden;
+  padding: 10px;
+  background:#fff;
+  text-align:left;
+}
+
+.newsBox .newsContain{
+  height:28px;
+  line-height:28px;
+  padding:0 15px;
+  border-bottom:2px
+  solid #39A4DC;
+  margin-bottom: 0;
+  font-size:14px;
+}
+
+.newsBox .newsContain ul{
+  line-height: 28px;
+  height: 28px;
+  overflow:hidden;
+  zoom:1;
+}
+
+.newsBox .newsContain ul li{
+  float:left;
+  line-height: 28px;
+  height: 28px;
+}
+
+.newsBox .newsContain ul span{
+  display:block;
+  line-height: 28px;;
+  padding:0 15px;
+  cursor: pointer;
+  user-select:none;
+}
+
+.newsBox .newsContain li a:hover{
+  text-decoration:none;
+}
+
+.newsBox .newsContain li.on span{
+  display: block;
+  background:#39A4DC;
+  color:#fff;
+  font-weight:bold;
+}
+.newsBox .newsContent{
+  padding:10px;
+}
+.newsBox .newsContent ul{
+  display: none ;
+  padding:10px;
+ }
+
+.newsBox .newsContent li{
+  height:24px;
+  line-height:24px;
+}
+
+.newsBox .newsContent li .date{
+  float:right; color:#999;
+}

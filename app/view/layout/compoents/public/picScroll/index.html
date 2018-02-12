@@ -1,0 +1,23 @@
+{% macro render(data = {}) %}
+<div class="picScroll">
+    <ul class="picScrollCon">
+      {% for item in data %}
+      <li><a href="{{item.href}}">
+        <img class="lazyload" data-original="{{item.src}}"  />
+      </a></li>
+      {% endfor %}
+    </ul>
+    <a class="prev"></a>
+    <a class="next"></a>
+</div>
+<script type="text/javascript">
+$(".picScroll").slide({
+  mainCell:".picScrollCon",
+  autoPlay:true,
+  effect:"left",
+  vis:5,
+  scroll:2,
+  autoPage:true,
+  pnLoop:false });
+</script>
+{% endmacro %}

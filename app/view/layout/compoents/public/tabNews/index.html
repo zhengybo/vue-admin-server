@@ -1,0 +1,27 @@
+{% macro render(data = {}) %}
+<div class="newsBox">
+  <div class="newsContain">
+    <ul>
+      {% for item in data or [] %}
+      <li><span href="#">{{item.name}}</span></li>
+      {% endfor %}
+    </ul>
+  </div>
+  <div class="newsContent">
+    {% for item in data %}
+    <ul>
+      {% for list in item.data or [] %}
+      <li><span class="date">{{list.date}}</span><a href="#">{{list.content}}</a></li>
+      {% endfor %}
+    </ul>
+    {% endfor %}
+  </div>
+</div>
+<script type="text/javascript">
+  $(".newsBox").slide({
+      titCell : '.newsContain li',
+      mainCell : '.newsContent',
+      trigger:"click"
+  });
+</script>
+{% endmacro %}
